@@ -4,7 +4,9 @@ import random
 random.seed(1)
 
 
-def sigmoid(x):
+def sigmoid(x, der=False):
+    if der:
+        return sigmoid(x) * (1 - sigmoid(x))
     return 1 / (1 + np.exp(-x))
 
 
